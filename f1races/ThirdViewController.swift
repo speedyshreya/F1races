@@ -21,8 +21,10 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Third page"
         // Do any additional setup after loading the view.
-       
-        YearLabelHeading.text = "For the year \(SecondViewController().selectedYear.yearSelectedFromPicker)"
+        if let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as? SecondViewController, let text = vc.selectedYear.yearSelectedFromPicker {
+            YearLabelHeading.text = "For the year \(text)"
+        }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
