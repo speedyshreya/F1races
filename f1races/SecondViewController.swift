@@ -9,7 +9,8 @@ import UIKit
 
 
 class SecondViewController: UIViewController {
-    
+    //129, 157, 119
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var YearLabelTest: UILabel!
     @IBOutlet weak var YearPicker: UIPickerView!
     var pickerData: [Int] = [Int]()
@@ -21,8 +22,10 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Second Page"
+        welcomeLabel.textColor = UIColor(displayP3Red: 129.0/255.0, green: 157.0/255.0, blue: 119.0/255.0, alpha: 1.0)
         setupView()
         self.reloadInputViews()
+        //self.view.backgroundColor
     }
     
     func setupView() {
