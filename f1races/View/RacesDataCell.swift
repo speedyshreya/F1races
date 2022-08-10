@@ -15,6 +15,16 @@ class RacesDataCell: UITableViewCell {
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblCircuit: UILabel!
     @IBOutlet weak var lblInformation: UILabel!
+    
+    var race:Race?{
+        didSet{
+            self.lblRound.text = race?.round
+            self.lblRaceName.text = race?.raceName
+            self.lblTime.text = race?.time
+            self.lblCircuit.text = race?.circuit.circuitName
+            self.lblInformation.text = race?.url
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

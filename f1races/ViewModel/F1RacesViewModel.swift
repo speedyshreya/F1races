@@ -19,16 +19,16 @@ class F1RacesViewModel{
     }
     func fetchingF1RacesFromServer(){
         let myURL = URL(string: "https://ergast.com/api/f1/2021.json")
-        networkManager.getData(url: myURL!) {data in
+        networkManager.getData(url: myURL!, objectType: F1RaceData.self) {data in
             print(data)
             self.f1RaceData = data
             self.timeToReloadTable?()
-        }
+           }
         
-        
-        networkManager.getDataTest(url: myURL!) { message, status in
+        //networkManager.getDataTest(url: myURL!) { message, status in
             
-        }
     }
+    
+    
 }
                                     

@@ -80,12 +80,7 @@ extension FourthViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:RacesDataCell = tableView.dequeueReusableCell(withIdentifier: "RacesDataCell", for: indexPath) as! RacesDataCell
-        cell.lblRound.text = self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row].round
-        cell.lblRaceName.text = self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row].raceName
-        cell.lblTime.text = self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row].time
-        cell.lblCircuit.text = self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row].circuit.circuitName
-        cell.lblInformation.text = self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row].url
-        
+        cell.race = f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row]
         return cell
     }
     
