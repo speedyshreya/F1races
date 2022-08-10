@@ -11,8 +11,8 @@ import UIKit
 class SecondViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     //129, 157, 119
-    @IBOutlet weak var welcomeLabel: UILabel!
     
+    @IBOutlet weak var welcomeLabel: UITextField!
     @IBOutlet weak var pickYearTitleLabel: UITextField!
    // @IBOutlet weak var YearLabelTest: UILabel!
     @IBOutlet weak var YearPicker: UIPickerView!
@@ -27,9 +27,12 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Second Page"
-        self.view.backgroundColor = UIColor(displayP3Red: 197.0/255.0, green: 223.0/255.0, blue: 239.0/255.0, alpha: 1.0)
-        pickYearTitleLabel.textColor = UIColor(displayP3Red: 129.0/255.0, green: 157.0/255.0, blue: 119.0/255.0, alpha: 1.0)
-        welcomeLabel.textColor = UIColor(displayP3Red: 191.0/255.0, green: 65.0/255.0, blue: 39.0/255.0, alpha: 1.0)
+//        self.view.backgroundColor = UIColor(displayP3Red: 197.0/255.0, green: 223.0/255.0, blue: 239.0/255.0, alpha: 1.0)
+        pickYearTitleLabel.textColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        pickYearTitleLabel.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        welcomeLabel.textColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        welcomeLabel.backgroundColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        
         setupView()
         self.reloadInputViews()
         //self.view.backgroundColor

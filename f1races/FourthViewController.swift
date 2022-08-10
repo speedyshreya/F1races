@@ -10,7 +10,7 @@ import UIKit
 class FourthViewController: UIViewController {
 
     var f1RacesViewModel = F1RacesViewModel()
-    
+   
     @IBOutlet weak var myTableView: UITableView!
    // var f1ConstructorData: F1ConstructorData?
     var year: Int = 0//default
@@ -23,6 +23,8 @@ class FourthViewController: UIViewController {
 
     }
     func getRacesData(){
+        print ("YEAR:")
+        print(year)
         f1RacesViewModel.timeToReloadTable = { [weak self ] in
             
             if Thread.isMainThread{
@@ -85,6 +87,6 @@ extension FourthViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 75
     }
 }

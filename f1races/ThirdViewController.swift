@@ -10,6 +10,7 @@ import UIKit
 class ThirdViewController: UIViewController {
     var year: Int = 0  //default
    
+    @IBOutlet weak var tapToKnowMoreLabel: UILabel!
     @IBOutlet weak var races: UIButton!
     @IBOutlet weak var constructors: UIButton!
     @IBOutlet weak var drivers: UIButton!
@@ -24,6 +25,19 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Third page"
+        YearLabelHeading.textColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        YearLabelHeading.backgroundColor =  UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        tapToKnowMoreLabel.textColor =
+        UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        tapToKnowMoreLabel.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        tapToKnowMoreLabel.layer.cornerRadius = 10
+        YearLabelHeading.layer.cornerRadius = 10
+        
+        races.backgroundColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        
+        constructors.backgroundColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        drivers.backgroundColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        
         // Do any additional setup after loading the view.
 //        if let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as? SecondViewController, let text = vc.selectedYear.yearSelectedFromPicker {
 //            YearLabelHeading.text = "For the year \(text)"
@@ -34,13 +48,13 @@ class ThirdViewController: UIViewController {
         
         
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "FourthViewController" {
-//            if let destinationVC = segue.destination as? FourthViewController {
-//                destinationVC.year = year
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FourthViewController" {
+            if let destinationVC = segue.destination as? FourthViewController {
+                destinationVC.year = year
+            }
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //        print(self.navigationController?.viewControllers)

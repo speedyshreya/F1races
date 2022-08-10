@@ -21,7 +21,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8gU-co-seV" secondAttribute="trailing" id="DLE-z6-MMV"/>
                             <constraint firstItem="8gU-co-seV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="88" id="GtB-5Z-b1l"/>
@@ -84,30 +84,24 @@
                                     <outlet property="delegate" destination="cTW-SY-e3D" id="UBz-oT-eMA"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqG-HP-Noy">
-                                <rect key="frame" x="65.5" y="147" width="283" height="26.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Welcome to the F1 Races App">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" metaFont="system" size="22"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to the F1 Races App" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnL-1m-X6u">
+                                <rect key="frame" x="73.5" y="110" width="267" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5cW-nd-rRc"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3OO-z8-Tdc" firstAttribute="centerY" secondItem="jcx-Q5-Kfr" secondAttribute="centerY" id="25e-Vx-oSx"/>
                             <constraint firstItem="5cW-nd-rRc" firstAttribute="bottom" secondItem="XXR-4E-Shl" secondAttribute="bottom" constant="31" id="8JQ-Gb-tLw"/>
                             <constraint firstItem="XXR-4E-Shl" firstAttribute="leading" secondItem="5cW-nd-rRc" secondAttribute="leading" constant="171.5" id="AbW-gc-zJN"/>
-                            <constraint firstItem="qqG-HP-Noy" firstAttribute="top" secondItem="5cW-nd-rRc" secondAttribute="top" constant="103" id="CdG-ge-Npn"/>
+                            <constraint firstItem="MnL-1m-X6u" firstAttribute="top" secondItem="5cW-nd-rRc" secondAttribute="top" constant="66" id="BPJ-lq-awb"/>
+                            <constraint firstItem="MnL-1m-X6u" firstAttribute="centerX" secondItem="jcx-Q5-Kfr" secondAttribute="centerX" id="Cke-5a-S4s"/>
                             <constraint firstItem="XXR-4E-Shl" firstAttribute="centerX" secondItem="xee-em-N9I" secondAttribute="centerX" id="YWz-ls-ZmP"/>
                             <constraint firstItem="xee-em-N9I" firstAttribute="top" secondItem="5cW-nd-rRc" secondAttribute="top" constant="190" id="f5O-3s-N6U"/>
                             <constraint firstItem="3OO-z8-Tdc" firstAttribute="centerX" secondItem="jcx-Q5-Kfr" secondAttribute="centerX" id="lM1-5c-bPp"/>
-                            <constraint firstItem="qqG-HP-Noy" firstAttribute="centerX" secondItem="jcx-Q5-Kfr" secondAttribute="centerX" id="s7y-aC-xyH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZPL-vC-GBF"/>
@@ -115,7 +109,7 @@
                         <outlet property="YearPicker" destination="3OO-z8-Tdc" id="B7O-qY-1nT"/>
                         <outlet property="nextButton" destination="XXR-4E-Shl" id="oYz-14-tCy"/>
                         <outlet property="pickYearTitleLabel" destination="xee-em-N9I" id="MCp-DG-Ntd"/>
-                        <outlet property="welcomeLabel" destination="qqG-HP-Noy" id="tIt-ak-6dI"/>
+                        <outlet property="welcomeLabel" destination="MnL-1m-X6u" id="Vl7-fc-Awn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwY-CK-qFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,53 +125,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the year &lt;selected&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAB-Xw-94P">
-                                <rect key="frame" x="104.5" y="188" width="205" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="79.5" y="188" width="255.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on one of the following options to know more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVB-7C-7kG">
-                                <rect key="frame" x="20.5" y="257.5" width="373.5" height="20.5"/>
+                                <rect key="frame" x="20.5" y="263.5" width="373.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AtT-Nk-vAy">
-                                <rect key="frame" x="46" y="321" width="108.5" height="123"/>
+                                <rect key="frame" x="46" y="327" width="120.5" height="132"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6b-sk-NEd">
-                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6b-sk-NEd">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Races" titleAlignment="leading"/>
+                                        <buttonConfiguration key="configuration" style="plain" titleAlignment="leading">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Races">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <segue destination="TD6-1O-TIq" kind="show" id="GiL-bk-fli"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz1-XM-MrK">
-                                        <rect key="frame" x="0.0" y="46" width="108.5" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz1-XM-MrK">
+                                        <rect key="frame" x="0.0" y="49" width="120.5" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Constructors"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Constructors">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
                                             <segue destination="NRd-b2-drt" kind="show" id="HH3-Ff-D0W"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk3-WO-1MB">
-                                        <rect key="frame" x="0.0" y="92" width="108.5" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk3-WO-1MB">
+                                        <rect key="frame" x="0.0" y="98" width="120.5" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Drivers"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Drivers">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HJL-BQ-OcT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DVB-7C-7kG" firstAttribute="top" secondItem="nAB-Xw-94P" secondAttribute="bottom" constant="49" id="6c1-j3-bFJ"/>
                             <constraint firstItem="nAB-Xw-94P" firstAttribute="centerX" secondItem="YUd-Bf-kYX" secondAttribute="centerX" id="8dn-yP-iAN"/>
                             <constraint firstItem="AtT-Nk-vAy" firstAttribute="leading" secondItem="HJL-BQ-OcT" secondAttribute="leading" constant="46" id="Scz-Ia-ONf"/>
                             <constraint firstItem="AtT-Nk-vAy" firstAttribute="top" secondItem="DVB-7C-7kG" secondAttribute="bottom" constant="43" id="X3C-Hz-B6M"/>
+                            <constraint firstItem="nAB-Xw-94P" firstAttribute="centerX" secondItem="YUd-Bf-kYX" secondAttribute="centerX" id="e16-b6-1y2"/>
                             <constraint firstItem="nAB-Xw-94P" firstAttribute="top" secondItem="HJL-BQ-OcT" secondAttribute="top" constant="188" id="f6p-lm-pX7"/>
                             <constraint firstItem="DVB-7C-7kG" firstAttribute="centerX" secondItem="YUd-Bf-kYX" secondAttribute="centerX" id="sUz-VP-YeN"/>
+                            <constraint firstItem="DVB-7C-7kG" firstAttribute="centerX" secondItem="YUd-Bf-kYX" secondAttribute="centerX" id="wV8-3C-FiF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GIG-IG-F5X"/>
@@ -186,6 +206,7 @@
                         <outlet property="constructors" destination="Hz1-XM-MrK" id="e2H-5A-2VP"/>
                         <outlet property="drivers" destination="sk3-WO-1MB" id="2aX-aZ-h6H"/>
                         <outlet property="races" destination="x6b-sk-NEd" id="87d-Ju-Cil"/>
+                        <outlet property="tapToKnowMoreLabel" destination="DVB-7C-7kG" id="08d-Aa-HYl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNx-SF-p3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -226,7 +247,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w7q-00-szj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vXK-Gg-aAd" firstAttribute="leading" secondItem="w7q-00-szj" secondAttribute="leading" id="Ah3-vw-gCG"/>
                             <constraint firstItem="w7q-00-szj" firstAttribute="trailing" secondItem="vXK-Gg-aAd" secondAttribute="trailing" id="SFh-sc-WWp"/>
@@ -262,6 +283,7 @@
             <point key="canvasLocation" x="628" y="55"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="background home screen image" width="1440" height="1800"/>
         <systemColor name="systemBackgroundColor">

@@ -23,6 +23,8 @@ class RacesDataCell: UITableViewCell {
             self.lblTime.text = race?.time
             self.lblCircuit.text = race?.circuit.circuitName
             self.lblInformation.text = race?.url
+            self.lblRound?.numberOfLines = 0
+            self.lblRound?.lineBreakMode = NSLineBreakMode.byWordWrapping
         }
     }
     override func awakeFromNib() {

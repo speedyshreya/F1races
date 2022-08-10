@@ -9,6 +9,7 @@ import Foundation
 
 class F1RacesViewModel{
     private let networkManager = NetworkingManager()
+    var year = 2022
     var timeToReloadTable : (() -> ())?
     var f1RaceData : F1RaceData? {
         didSet {
