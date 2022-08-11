@@ -8,12 +8,12 @@
 import Foundation
 
 class NetworkingManager{
-    func getData<T:Codable>(url:URL, objectType: T.Type, onCompletion: @escaping (F1RaceData)->Void){
+    func getData<T:Codable>(url:URL, objectType: T.Type, onCompletion: @escaping (F1RacesData)->Void){
         URLSession.shared.dataTask(with: url){data, response, error in
             do{
                 let myData = try? JSONDecoder().decode(T.self, from: data!)
                 //print(myData?.mrData.raceTable.races)
-                onCompletion(myData! as! F1RaceData)
+                onCompletion(myData! as! F1RacesData)
                 //self.f1ConstructorData = myData
                // print(myData?.mrDataConstructor.constructorTable.constructors)
 //                DispatchQueue.main.async{

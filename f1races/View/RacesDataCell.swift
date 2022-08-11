@@ -12,17 +12,17 @@ class RacesDataCell: UITableViewCell {
     
     @IBOutlet weak var lblRound: UILabel!
     @IBOutlet weak var lblRaceName: UILabel!
-    @IBOutlet weak var lblTime: UILabel!
+   // @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblCircuit: UILabel!
-    @IBOutlet weak var lblInformation: UILabel!
+   // @IBOutlet weak var lblInformation: UILabel!
     
     var race:Race?{
         didSet{
             self.lblRound.text = race?.round
-            self.lblRaceName.text = race?.raceName
-            self.lblTime.text = race?.time
-            self.lblCircuit.text = race?.circuit.circuitName
-            self.lblInformation.text = race?.url
+            self.lblRaceName.text = "asjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkand"
+          //  self.lblTime.text = race?.time
+            self.lblCircuit.text = race?.circuit?.circuitName
+         //   self.lblInformation.text = race?.url
             self.lblRound?.numberOfLines = 0
             self.lblRound?.lineBreakMode = NSLineBreakMode.byWordWrapping
         }

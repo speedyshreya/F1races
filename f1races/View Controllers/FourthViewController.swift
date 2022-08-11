@@ -13,7 +13,7 @@ class FourthViewController: UIViewController {
    
     @IBOutlet weak var myTableView: UITableView!
    // var f1ConstructorData: F1ConstructorData?
-    var year: Int = 0//default
+    var year: Int?//default
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,10 @@ class FourthViewController: UIViewController {
     }
     func getRacesData(){
         print ("YEAR:")
+        
         print(year)
+       
+        
         f1RacesViewModel.timeToReloadTable = { [weak self ] in
             
             if Thread.isMainThread{
@@ -36,7 +39,10 @@ class FourthViewController: UIViewController {
             }
             print("Time to reload table")
         }
-        f1RacesViewModel.fetchingF1RacesFromServer()
+        guard let selectedYear2 = year else { return
+
+        }
+        f1RacesViewModel.fetchingF1RacesFromServer(year: selectedYear2)
     }
 //    func getRacesData(){
 //        let myURL = URL(string: "https://ergast.com/api/f1/2021.json")
@@ -75,18 +81,18 @@ class FourthViewController: UIViewController {
 }
 extension FourthViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.f1RacesViewModel.f1RaceData?.mrData.raceTable.races.count ?? 0
+        return self.f1RacesViewModel.f1RaceData?.mrData?.raceTable?.races?.count ?? 0
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:RacesDataCell = tableView.dequeueReusableCell(withIdentifier: "RacesDataCell", for: indexPath) as! RacesDataCell
-        cell.race = f1RacesViewModel.f1RaceData?.mrData.raceTable.races[indexPath.row]
+        cell.race = f1RacesViewModel.f1RaceData?.mrData?.raceTable?.races?[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return UITableView.automaticDimension
     }
 }

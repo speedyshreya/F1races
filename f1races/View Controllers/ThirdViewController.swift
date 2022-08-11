@@ -8,7 +8,7 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-    var year: Int = 0  //default
+    var year: Int? //default
    
     @IBOutlet weak var tapToKnowMoreLabel: UILabel!
     @IBOutlet weak var races: UIButton!
@@ -51,7 +51,7 @@ class ThirdViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FourthViewController" {
             if let destinationVC = segue.destination as? FourthViewController {
-                destinationVC.year = year
+                destinationVC.year = year ?? 0
             }
         }
     }

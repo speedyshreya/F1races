@@ -11,16 +11,17 @@ class F1RacesViewModel{
     private let networkManager = NetworkingManager()
     var year = 2022
     var timeToReloadTable : (() -> ())?
-    var f1RaceData : F1RaceData? {
+    var f1RaceData : F1RacesData? {
         didSet {
             timeToReloadTable?()
         }
     }
     init(){
     }
-    func fetchingF1RacesFromServer(){
-        let myURL = URL(string: "https://ergast.com/api/f1/2021.json")
-        networkManager.getData(url: myURL!, objectType: F1RaceData.self) {data in
+    func fetchingF1RacesFromServer(year: Int){
+        let computedYear = "https://ergast.com/api/f1/\(year).json"
+        let myURL = URL(string: computedYear)
+        networkManager.getData(url: myURL!, objectType: F1RacesData.self) {data in
             print(data)
             self.f1RaceData = data
             self.timeToReloadTable?()
