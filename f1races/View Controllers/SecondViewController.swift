@@ -20,31 +20,27 @@ class SecondViewController: UIViewController {
     
     var selectedYear = SelectedYear()
     
-    
-    
     @IBAction func actionNext(_ sender: Any) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Second Page"
-//        self.view.backgroundColor = UIColor(displayP3Red: 197.0/255.0, green: 223.0/255.0, blue: 239.0/255.0, alpha: 1.0)
+        setUpUI()
+        setupView()
+        self.reloadInputViews()
+    }
+    
+    func setUpUI(){
         pickYearTitleLabel.textColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
         pickYearTitleLabel.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         welcomeLabel.textColor = UIColor(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         welcomeLabel.backgroundColor = UIColor(displayP3Red: 241.0/255.0, green: 74.0/255.0, blue: 54.0/255.0, alpha: 1.0)
-        
-        setupView()
-        self.reloadInputViews()
-        //self.view.backgroundColor
     }
-    
     func setupView() {
         for i in 1950...2022{
             pickerData.append(i)
         }
         selectedYear.updateYear(year: pickerData[0])
-
-        // pickerData = [1999, 2000, 2001, 2002, 2003]
         self.YearPicker.delegate = self
         self.YearPicker.dataSource = self
     }
@@ -55,7 +51,6 @@ class SecondViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension SecondViewController : UIPickerViewDelegate, UIPickerViewDataSource{

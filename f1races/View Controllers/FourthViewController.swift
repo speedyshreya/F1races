@@ -12,8 +12,7 @@ class FourthViewController: UIViewController {
     var f1RacesViewModel = F1RacesViewModel()
    
     @IBOutlet weak var myTableView: UITableView!
-   // var f1ConstructorData: F1ConstructorData?
-    var year: Int?//default
+    var year: Int? //default
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,44 +38,12 @@ class FourthViewController: UIViewController {
             }
             print("Time to reload table")
         }
-        guard let selectedYear2 = year else { return
+        guard let selectedYear2 = year else {
+            return
 
         }
         f1RacesViewModel.fetchingF1RacesFromServer(year: selectedYear2)
     }
-//    func getRacesData(){
-//        let myURL = URL(string: "https://ergast.com/api/f1/2021.json")
-//
-//        URLSession.shared.dataTask(with: myURL!){data, response, error in
-//            do{
-//                let myData = try? JSONDecoder().decode(F1RaceData.self, from: data!)
-//                self.f1RaceData = myData
-//                print(myData?.mrData.raceTable.races)
-//                DispatchQueue.main.async {
-//                    self.myTableView.reloadData()
-//                }
-//            }catch{
-//
-//            }
-//        }.resume()
-//    }
-    
-//    func getConstructorsData(){
-//
-//        let myURL = URL(string: "https://ergast.com/api/f1/2020/constructors")
-//        URLSession.shared.dataTask(with: myURL!){data, response, error in
-//            do{
-//                let myData = try? JSONDecoder().decode(F1ConstructorData.self, from: data!)
-//                self.f1ConstructorData = myData
-//                print(myData?.mrDataConstructor.constructorTable.constructors)
-//                DispatchQueue.main.async{
-//                    self.myTableView.reloadData()
-//                }
-//
-//            }
-//
-//        }
-//    }
     
 }
 extension FourthViewController: UITableViewDelegate, UITableViewDataSource{

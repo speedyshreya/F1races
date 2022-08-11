@@ -12,13 +12,7 @@ class NetworkingManager{
         URLSession.shared.dataTask(with: url){data, response, error in
             do{
                 let myData = try? JSONDecoder().decode(T.self, from: data!)
-                //print(myData?.mrData.raceTable.races)
                 onCompletion(myData! as! F1RacesData)
-                //self.f1ConstructorData = myData
-               // print(myData?.mrDataConstructor.constructorTable.constructors)
-//                DispatchQueue.main.async{
-//                 //   self.myTableView.reloadData()
-//                }
                 
             } catch {
                 
@@ -26,20 +20,5 @@ class NetworkingManager{
         
         }.resume()
     }
-//    func getDataTest(url:URL, onCompletion: @escaping (String, Bool)->Void){
-//        URLSession.shared.dataTask(with: url){data, response, error in
-//            do{
-//                let myData = try? JSONDecoder().decode(F1RaceData.self, from: data!)
-//                print(myData?.mrData.raceTable.races)
-//                onCompletion("test", true)
-//                //self.f1ConstructorData = myData
-//               // print(myData?.mrDataConstructor.constructorTable.constructors)
-////                DispatchQueue.main.async{
-////                 //   self.myTableView.reloadData()
-////                }
-//                
-//            }
-//        
-//        }.resume()
-//    }
+
 }

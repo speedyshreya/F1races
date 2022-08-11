@@ -19,7 +19,7 @@ class RacesDataCell: UITableViewCell {
     var race:Race?{
         didSet{
             self.lblRound.text = race?.round
-            self.lblRaceName.text = "asjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkandasjdfalsdfasdfsfjaksdjfasdkfasdkfjsdfjaksdfadfadfjnkand"
+            self.lblRaceName.text = race?.raceName
           //  self.lblTime.text = race?.time
             self.lblCircuit.text = race?.circuit?.circuitName
          //   self.lblInformation.text = race?.url

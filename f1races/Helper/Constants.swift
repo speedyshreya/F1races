@@ -7,5 +7,4 @@
 
 import Foundation
 
-let f1RacesUrl = "https://ergast.com/api/f1/2021.json"
-let f1RacesUrl2 = "https://ergast.com/api/f1/"
+let f1RacesUrl = "https://ergast.com/api/f1/"
