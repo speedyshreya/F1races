@@ -15,12 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Home Page"
         imgLaunchScreen.isUserInteractionEnabled = true
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         tap.numberOfTapsRequired = 1
-        imgLaunchScreen.addGestureRecognizer(tap)
-        
-        
+        imgLaunchScreen.addGestureRecognizer(tap)        
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
@@ -28,15 +25,6 @@ class ViewController: UIViewController {
        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
-    
-    
-
-//    @IBAction func myCustomAction(){
-//        self.navigationController?.pushViewController(SecondViewController(), animated: true)
-//    }
-//
-    
-
+        
 }
 

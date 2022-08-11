@@ -1,14 +1,13 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  F1RacesData.swift
-//  f1races
-//
-//  Created by Shreya Raj on 04/08/22.
-//
+//   let f1RacesData = try? newJSONDecoder().decode(F1RacesData.self, from: jsonData)
 
 import Foundation
 
-struct F1RaceData: Codable {
-    let mrData: MRData
+// MARK: - F1RacesData
+struct F1RacesData: Codable {
+    let mrData: MRData?
 
     enum CodingKeys: String, CodingKey {
         case mrData = "MRData"
@@ -17,11 +16,11 @@ struct F1RaceData: Codable {
 
 // MARK: - MRData
 struct MRData: Codable {
-    let xmlns: String
-    let series: String
-    let url: String
-    let limit, offset, total: String
-    let raceTable: RaceTable
+    let xmlns: String?
+    let series: String?
+    let url: String?
+    let limit, offset, total: String?
+    let raceTable: RaceTable?
 
     enum CodingKeys: String, CodingKey {
         case xmlns, series, url, limit, offset, total
@@ -31,8 +30,8 @@ struct MRData: Codable {
 
 // MARK: - RaceTable
 struct RaceTable: Codable {
-    let season: String
-    let races: [Race]
+    let season: String?
+    let races: [Race]?
 
     enum CodingKeys: String, CodingKey {
         case season
@@ -42,14 +41,12 @@ struct RaceTable: Codable {
 
 // MARK: - Race
 struct Race: Codable {
-    let season, round: String
-    let url: String
-    let raceName: String
-    let circuit: Circuit
-    let date, time: String
-    let firstPractice, secondPractice: FirstPractice
-    let thirdPractice: FirstPractice?
-    let qualifying: FirstPractice
+    let season, round: String?
+    let url: String?
+    let raceName: String?
+    let circuit: Circuit?
+    let date, time: String?
+    let firstPractice, secondPractice, thirdPractice, qualifying: FirstPractice?
     let sprint: FirstPractice?
 
     enum CodingKeys: String, CodingKey {
@@ -66,10 +63,10 @@ struct Race: Codable {
 
 // MARK: - Circuit
 struct Circuit: Codable {
-    let circuitID: String
-    let url: String
-    let circuitName: String
-    let location: Location
+    let circuitID: String?
+    let url: String?
+    let circuitName: String?
+    let location: Location?
 
     enum CodingKeys: String, CodingKey {
         case circuitID = "circuitId"
@@ -80,10 +77,10 @@ struct Circuit: Codable {
 
 // MARK: - Location
 struct Location: Codable {
-    let lat, long, locality, country: String
+    let lat, long, locality, country: String?
 }
 
 // MARK: - FirstPractice
 struct FirstPractice: Codable {
-    let date: String
+    let date: String?
 }
